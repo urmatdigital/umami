@@ -1,0 +1,16 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "npm start"
+healthcheckPath = "/"
+healthcheckTimeout = 100
+restartPolicyType = "ON_FAILURE"
+numReplicas = 1
+
+[deploy.envs]
+DATABASE_URL = "postgresql://postgres:aHCgBPkDQxVzvoVCZolVFcRycBYuozaH@junction.proxy.rlwy.net:28953/railway"
+DATABASE_TYPE = "postgresql"
+NODE_ENV = "production"
+PORT = "3000"
